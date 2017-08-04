@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/abhay-venkatesh/neato-pi-wasd#readme",
   "dependencies": {
+    "serialport2": "0.0.5",
     "ws": "^3.1.0"
   }
 }

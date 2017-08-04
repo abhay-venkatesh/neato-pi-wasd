@@ -1,7 +1,7 @@
 /********************* Server Functions *********************/
 
 // Setup the connection to the server
-var SerialPort = require("serialport");
+var SerialPort = require("serialport2").SerialPort;
 var WebSocket = require('ws');
 
 var wss = new WebSocket.Server({ port: 7080 });
@@ -23,6 +23,7 @@ wss.on('connection', function connection(ws) {
 
 /********************* Neato Functions *********************/
 
+/*
 // Setup the connection to the Neato
 var port = new SerialPort("/dev/ttyACM0", {
   baudRate: 115200
@@ -44,6 +45,24 @@ port.on('open', function() {
 port.on('error', function(err) {
   console.log('Error: ', err.message);
 })
+*/
+
+/*
+var port = new SerialPort();
+port.open('/dev/ttyACM0/', {
+  baudRate: 115200
+}, function(err) {
+  port.write('testmode on' + '\n', function(err) {
+    if (err) {
+      return console.log('Error on write: ', err.message);
+    }
+    console.log('Neato Ready!');
+  });
+});
+*/
+
+
+
 
 /********************* Private Functions *********************/
 
